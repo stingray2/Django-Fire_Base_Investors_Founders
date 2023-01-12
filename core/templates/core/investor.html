@@ -1,0 +1,15 @@
+<div 
+class="center" 
+style="color: blue;">
+<h3>Investors Details</h3>
+{% for i in investor %}
+<div>
+    <h1> {{i.name}}</h1>
+    <h1> {{i.company_name}}</h1>
+    <h1> {{i.ceo_email}}</h1>
+    <h1> {{i.ceo_phone}}</h1>
+</div>
+{% endfor %}
+</div>
+<button><a href="/"> Home </a></button>
+<button><a href="/"> Add More Details</a></button>

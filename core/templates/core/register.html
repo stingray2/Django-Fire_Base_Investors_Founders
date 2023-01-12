@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% block title %} Register {% endblock %}
+{% block content %} 
+{% load static %}
+<br><br><br><br>
+<body>
+    <div>
+        {% for i in messages %}
+        <h1>{{i}}</h1>
+        {% endfor %}
+    </div>
+    <div class="box-reg">
+        <div class="square-box">
+            <div class="box-from">
+                <h3>Register </h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="firstname">First Name:</label><br>
+                    <input type="text" id="firstname" name="firstname"><br>
+                    <label for="lastname">Last Name:</label><br>
+                    <input type="text" id="lastname" name="lastname"><br>
+                    <label for="name">Username:</label><br>
+                    <input type="text" id="name" name="username"><br>
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email"><br>
+                    <!-- <label for="phone">Phone:</label><br>
+                    <input type="text" id="phone" name="phone"><br> -->
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password2"><br>
+                    <div class="box-btn">
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block">Register</button>
+                    </div>
+                </form>
+                <br><br><br><br>
+                <h6>You are allready Register?</h6>
+                    <button type="button" class="btn btn-primary btn-sm">Log In</button><br>
+            </div>
+        </div>
+    </div>
+<style>
+      .square-box {
+        width: 650px;
+        height: 900px;
+        background-color: #fffdfd;
+        box-shadow: 4px 4px 10px #7e7b7b;
+      }
+       input[type=password] {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      input[type=text]{
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      .box-reg{
+        position: absolute;
+        top: 105px;
+        left: 400px;
+      }
+      .box-from{
+        position: absolute;
+        top: 100px;
+        left: 150px;
+        width: 650px;
+        height: 600px;
+      }
+      .box-btn{
+        position: absolute;
+        top: 630px;
+        left: 120px;
+      }
+</style>
+</body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
