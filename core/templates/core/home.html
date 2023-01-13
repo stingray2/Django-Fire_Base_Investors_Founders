@@ -4,6 +4,14 @@
 {% load static %}
 <section id="hero" class="hero d-flex align-items-center">
   <div class="container">
+    {% for i in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Hy</strong> {{i}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
     <div class="row">
       <div class="col-lg-6 d-flex flex-column justify-content-center">
         <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>
@@ -597,27 +605,17 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- End F.A.Q Section -->
-
-
-    <!-- ======= Clients Section ======= -->
+    </section>
     <section id="clients" class="clients">
-
       <div class="container" data-aos="fade-up">
-
         <header class="section-header">
           <h2>Our Clients</h2>
           <p>Temporibus omnis officia</p>
         </header>
-
         <div class="clients-slider swiper">
           <div class="swiper-wrapper align-items-center">
             <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-1.png' '%}" class="img-fluid" alt=""></div>
@@ -632,21 +630,14 @@
           <div class="swiper-pagination"></div>
         </div>
       </div>
-
-    </section><!-- End Clients Section -->
-
-    <!-- ======= Recent Blog Posts Section ======= -->
+    </section>
     <section id="recent-blog-posts" class="recent-blog-posts">
-
       <div class="container" data-aos="fade-up">
-
         <header class="section-header">
           <h2>Blog</h2>
           <p>Recent posts form our Blog</p>
         </header>
-
         <div class="row">
-
           <div class="col-lg-4">
             <div class="post-box">
               <div class="post-img"><img src="{% static 'assets/img/blog/blog-1.jpg' '%}" class="img-fluid" alt=""></div>
@@ -655,7 +646,6 @@
               <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-
           <div class="col-lg-4">
             <div class="post-box">
               <div class="post-img"><img src="{% static 'assets/img/blog/blog-2.jpg' '%}" class="img-fluid" alt=""></div>
@@ -664,7 +654,6 @@
               <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-
           <div class="col-lg-4">
             <div class="post-box">
               <div class="post-img"><img src="{% static 'assets/img/blog/blog-3.jpg' '%}" class="img-fluid" alt=""></div>
@@ -673,27 +662,17 @@
               <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- End Recent Blog Posts Section -->
-
-    <!-- ======= Contact Section ======= -->
+    </section>
     <section id="contact" class="contact">
-
       <div class="container" data-aos="fade-up">
-
         <header class="section-header">
           <h2>Contact</h2>
           <p>Contact Us</p>
         </header>
-
         <div class="row gy-4">
-
           <div class="col-lg-6">
-
             <div class="row gy-4">
               <div class="col-md-6">
                 <div class="info-box">
@@ -724,34 +703,26 @@
                 </div>
               </div>
             </div>
-
           </div>
-
           <div class="col-lg-6">
             <form action="forms/contact.php" method="post" class="php-email-form">
               <div class="row gy-4">
-
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                 </div>
-
                 <div class="col-md-6 ">
                   <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                 </div>
-
                 <div class="col-md-12">
                   <input type="text" class="form-control" name="subject" placeholder="Subject" required>
                 </div>
-
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
                 </div>
-
                 <div class="col-md-12 text-center">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
-
                   <button type="submit">Send Message</button>
                 </div>
               </div>

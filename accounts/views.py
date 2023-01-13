@@ -30,3 +30,25 @@ def register(request):
             return redirect('register')
     else:
         return render(request,'core/register.html')
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            messages.info(request,'You are Log In')
+            return redirect('/')
+        else:
+            messages.info(request, 'Username or password Invalid')
+            return redirect('login')
+    else:
+        return render(request,'core/login.html')
+
+def logout(request):
+    auth.logout(request)
+    messages.info(request,'You are logout')
+    return redirect('login')
+
+def profile(request):
+    return render(request,'core/profile.html')

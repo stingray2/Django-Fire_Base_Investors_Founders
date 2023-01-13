@@ -1,6 +1,90 @@
 {% extends 'core/base.html' %}
+{% load static %}
 {% block title %} Register {% endblock %}
 {% block content %} 
-{% load static %}
-
+<br><br><br>
+<div class="box-top1">
+    <div class="box-reg">
+        <div class="square-box1">
+            <div class="box-from1">
+                <h1>Logi In</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="name">Username:</label><br>
+                    <input type="text" id="name" name="username"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    <div class="box-btn1">
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block">Register</button>
+                    </div><br>
+                    <br><br><br>
+                    <a href="{% url 'register' %}">
+                    <h6>You are allready Log In?</h6>
+                    <button type="button" class="btn btn-primary btn-sm">Register</button><br>
+                    </a> 
+                </form>
+                <div class="box-msg">
+                    {% for i in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{i}}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .square-box1 {
+        width: 650px;
+        height: 550px;
+        background-color: #fffdfd;
+        box-shadow: 4px 4px 10px #7e7b7b;
+      }
+       input[type=password] {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      input[type=text]{
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      .box-from1{
+        position: absolute;
+        top: 100px;
+        left: 150px;
+        width: 650px;
+        height: 600px;
+      }
+      .box-top1{
+        position: absolute;
+        top: 100px;
+        left: 350px;
+      }
+      .box-btn1{
+        position: absolute;
+        top: 270px;
+        left: 120px;
+      }
+      .box-msg{
+        position: absolute;
+        top: 400px;
+        left: -150px;
+        width: 650px;
+        height: 600px;
+      }
+</style>
+<br><br><br><br><br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br><br><br><br><br>
 {% endblock %}
